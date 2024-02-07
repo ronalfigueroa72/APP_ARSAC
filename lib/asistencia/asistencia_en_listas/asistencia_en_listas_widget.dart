@@ -299,7 +299,7 @@ class _AsistenciaEnListasWidgetState extends State<AsistenciaEnListasWidget>
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 17.0, 0.0, 0.0),
                               child: GradientText(
-                                'Listado Estudiantes',
+                                'Listado Estudiantes jajaj',
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
@@ -559,7 +559,7 @@ class _AsistenciaEnListasWidgetState extends State<AsistenciaEnListasWidget>
                                                                               FFButtonWidget(
                                                                             onPressed:
                                                                                 () {
-                                                                              print('Button pressed ..asdfasdf.');
+                                                                              print('Button pressed ...');
                                                                             },
                                                                             text:
                                                                                 'Button',

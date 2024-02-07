@@ -465,13 +465,6 @@ class _CambiarContrasenaWidgetState extends State<CambiarContrasenaWidget>
                                 child: FFButtonWidget(
                                   onPressed: () {
                                     print('Button pressed ...');
-                                    print("Hola somos programadores");
-                                    print("Hola somos programadores");
-
-                                    print("Y tambien arreglamos compus");
-
-                                    print("Hola somos programadores");
-
                                   },
                                   text: 'Guardar',
                                   options: FFButtonOptions(
