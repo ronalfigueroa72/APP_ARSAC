@@ -394,7 +394,13 @@ class _AsistenciaEnListasWidgetState extends State<AsistenciaEnListasWidget>
                                                                     'Nombres',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .bodyMedium,
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Readex Pro',
+                                                                          fontWeight:
+                                                                              FontWeight.w800,
+                                                                        ),
                                                                   ),
                                                                 ),
                                                               ),
@@ -411,10 +417,16 @@ class _AsistenciaEnListasWidgetState extends State<AsistenciaEnListasWidget>
                                                                           25.0,
                                                                           0.0),
                                                                   child: Text(
-                                                                    'Asistencia',
+                                                                    'Opciones',
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .bodyMedium,
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Readex Pro',
+                                                                          fontWeight:
+                                                                              FontWeight.w800,
+                                                                        ),
                                                                   ),
                                                                 ),
                                                               ),
@@ -633,7 +645,7 @@ class _AsistenciaEnListasWidgetState extends State<AsistenciaEnListasWidget>
                                                                               .bodyMedium
                                                                               .override(
                                                                                 fontFamily: 'Readex Pro',
-                                                                                fontSize: 10.0,
+                                                                                fontSize: 15.0,
                                                                               ),
                                                                         ),
                                                                       ),
