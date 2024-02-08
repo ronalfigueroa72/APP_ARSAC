@@ -547,6 +547,7 @@ class _AsistenciaEnListasWidgetState extends State<AsistenciaEnListasWidget>
                                                                               FFButtonWidget(
                                                                             onPressed:
                                                                                 () {
+                                                                              print("Aldopantoja2000");
                                                                               print('Button pressed ...');
                                                                             },
                                                                             text:
