@@ -1,17 +1,12 @@
 import '/componenetes/menu/menu_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'reporte_por_estudiante_widget.dart' show ReportePorEstudianteWidget;
+import 'crear_asistencia_widget.dart' show CrearAsistenciaWidget;
 import 'package:flutter/material.dart';
 
-class ReportePorEstudianteModel
-    extends FlutterFlowModel<ReportePorEstudianteWidget> {
+class CrearAsistenciaModel extends FlutterFlowModel<CrearAsistenciaWidget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController;
-  String? Function(BuildContext, String?)? textControllerValidator;
   // State field(s) for DropDown widget.
   String? dropDownValue1;
   FormFieldController<String>? dropDownValueController1;
@@ -33,9 +28,6 @@ class ReportePorEstudianteModel
 
   @override
   void dispose() {
-    textFieldFocusNode?.dispose();
-    textController?.dispose();
-
     menuModel.dispose();
   }
 

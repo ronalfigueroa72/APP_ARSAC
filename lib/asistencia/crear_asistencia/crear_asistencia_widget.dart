@@ -1,3 +1,4 @@
+import '/componenetes/menu/menu_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -8,20 +9,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
-import 'asistencia_en_listas_model.dart';
-export 'asistencia_en_listas_model.dart';
+import 'crear_asistencia_model.dart';
+export 'crear_asistencia_model.dart';
 
-class AsistenciaEnListasWidget extends StatefulWidget {
-  const AsistenciaEnListasWidget({super.key});
+class CrearAsistenciaWidget extends StatefulWidget {
+  const CrearAsistenciaWidget({super.key});
 
   @override
-  State<AsistenciaEnListasWidget> createState() =>
-      _AsistenciaEnListasWidgetState();
+  State<CrearAsistenciaWidget> createState() => _CrearAsistenciaWidgetState();
 }
 
-class _AsistenciaEnListasWidgetState extends State<AsistenciaEnListasWidget>
+class _CrearAsistenciaWidgetState extends State<CrearAsistenciaWidget>
     with TickerProviderStateMixin {
-  late AsistenciaEnListasModel _model;
+  late CrearAsistenciaModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -51,7 +51,7 @@ class _AsistenciaEnListasWidgetState extends State<AsistenciaEnListasWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => AsistenciaEnListasModel());
+    _model = createModel(context, () => CrearAsistenciaModel());
 
     setupAnimations(
       animationsMap.values.where((anim) =>
@@ -299,7 +299,7 @@ class _AsistenciaEnListasWidgetState extends State<AsistenciaEnListasWidget>
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 17.0, 0.0, 0.0),
                               child: GradientText(
-                                'Listado Estudiantes jajaj',
+                                'Listado Estudiantes',
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
@@ -314,7 +314,7 @@ class _AsistenciaEnListasWidgetState extends State<AsistenciaEnListasWidget>
                           ),
                           Container(
                             width: double.infinity,
-                            height: 598.0,
+                            height: 486.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
@@ -512,16 +512,31 @@ class _AsistenciaEnListasWidgetState extends State<AsistenciaEnListasWidget>
                                                                               FFButtonWidget(
                                                                             onPressed:
                                                                                 () async {
-                                                                              context.pushNamed(
-                                                                                'CargarPermisos',
-                                                                                extra: <String, dynamic>{
-                                                                                  kTransitionInfoKey: const TransitionInfo(
-                                                                                    hasTransition: true,
-                                                                                    transitionType: PageTransitionType.bottomToTop,
-                                                                                    duration: Duration(milliseconds: 300),
-                                                                                  ),
-                                                                                },
-                                                                              );
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Subir Permiso'),
+                                                                                        content: const Text('Esta seguro(a), de subir el permiso del estudiante'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancelar'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
+                                                                              if (confirmDialogResponse) {
+                                                                                context.pushNamed('CargarPermisos');
+                                                                              } else {
+                                                                                context.pushNamed('Crear_Asistencia');
+                                                                              }
                                                                             },
                                                                             text:
                                                                                 'Button',
@@ -536,7 +551,7 @@ class _AsistenciaEnListasWidgetState extends State<AsistenciaEnListasWidget>
                                                                               width: 30.0,
                                                                               height: 90.0,
                                                                               padding: const EdgeInsets.all(3.0),
-                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
                                                                               color: const Color(0xFFF7B800),
                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: 'Readex Pro',
@@ -558,8 +573,32 @@ class _AsistenciaEnListasWidgetState extends State<AsistenciaEnListasWidget>
                                                                           child:
                                                                               FFButtonWidget(
                                                                             onPressed:
-                                                                                () {
-                                                                              print('Button pressed ...');
+                                                                                () async {
+                                                                              var confirmDialogResponse = await showDialog<bool>(
+                                                                                    context: context,
+                                                                                    builder: (alertDialogContext) {
+                                                                                      return AlertDialog(
+                                                                                        title: const Text('Confirmar falta'),
+                                                                                        content: const Text('El estudiante no asistió hoy?'),
+                                                                                        actions: [
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                            child: const Text('Cancel'),
+                                                                                          ),
+                                                                                          TextButton(
+                                                                                            onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                            child: const Text('Confirmar'),
+                                                                                          ),
+                                                                                        ],
+                                                                                      );
+                                                                                    },
+                                                                                  ) ??
+                                                                                  false;
+                                                                              if (confirmDialogResponse) {
+                                                                                context.pushNamed('Crear_Asistencia');
+                                                                              } else {
+                                                                                context.pushNamed('Crear_Asistencia');
+                                                                              }
                                                                             },
                                                                             text:
                                                                                 'Button',
@@ -574,7 +613,7 @@ class _AsistenciaEnListasWidgetState extends State<AsistenciaEnListasWidget>
                                                                               width: 30.0,
                                                                               height: 40.0,
                                                                               padding: const EdgeInsets.all(3.0),
-                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 0.0, 0.0),
                                                                               color: const Color(0xFFD70000),
                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: 'Readex Pro',
@@ -671,7 +710,35 @@ class _AsistenciaEnListasWidgetState extends State<AsistenciaEnListasWidget>
                               ),
                             ),
                           ),
-                        ].addToEnd(const SizedBox(height: 20.0)),
+                          Align(
+                            alignment: const AlignmentDirectional(0.0, 1.0),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 10.0, 0.0, 0.0),
+                              child: Container(
+                                width: double.infinity,
+                                height: 70.0,
+                                decoration: const BoxDecoration(
+                                  color: Color(0xFFFAD02C),
+                                ),
+                                child: Card(
+                                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  elevation: 4.0,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(24.0),
+                                  ),
+                                  child: wrapWithModel(
+                                    model: _model.menuModel,
+                                    updateCallback: () => setState(() {}),
+                                    child: const MenuWidget(),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),

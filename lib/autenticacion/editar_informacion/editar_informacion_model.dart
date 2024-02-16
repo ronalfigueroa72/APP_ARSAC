@@ -1,8 +1,9 @@
+import '/componenetes/menu/menu_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'edita_informacion_widget.dart' show EditaInformacionWidget;
+import 'editar_informacion_widget.dart' show EditarInformacionWidget;
 import 'package:flutter/material.dart';
 
-class EditaInformacionModel extends FlutterFlowModel<EditaInformacionWidget> {
+class EditarInformacionModel extends FlutterFlowModel<EditarInformacionWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for yourName widget.
@@ -17,11 +18,15 @@ class EditaInformacionModel extends FlutterFlowModel<EditaInformacionWidget> {
   FocusNode? yourNameFocusNode3;
   TextEditingController? yourNameController3;
   String? Function(BuildContext, String?)? yourNameController3Validator;
+  // Model for Menu component.
+  late MenuModel menuModel;
 
   /// Initialization and disposal methods.
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    menuModel = createModel(context, () => MenuModel());
+  }
 
   @override
   void dispose() {
@@ -33,6 +38,8 @@ class EditaInformacionModel extends FlutterFlowModel<EditaInformacionWidget> {
 
     yourNameFocusNode3?.dispose();
     yourNameController3?.dispose();
+
+    menuModel.dispose();
   }
 
   /// Action blocks are added here.

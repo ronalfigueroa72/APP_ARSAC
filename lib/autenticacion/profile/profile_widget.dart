@@ -1,3 +1,4 @@
+import '/componenetes/menu/menu_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -235,7 +236,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed(
-                                    'EditaInformacion',
+                                    'Editar_Informacion',
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: const TransitionInfo(
                                         hasTransition: true,
@@ -487,12 +488,35 @@ class _ProfileWidgetState extends State<ProfileWidget>
                             ),
                           ),
                         ),
-                      ].addToEnd(const SizedBox(height: 300.0)),
+                      ].addToEnd(const SizedBox(height: 30.0)),
                     ),
                   ),
                 ),
               ).animateOnPageLoad(
                   animationsMap['containerOnPageLoadAnimation']!),
+            ),
+            Align(
+              alignment: const AlignmentDirectional(0.0, 1.0),
+              child: Container(
+                width: double.infinity,
+                height: 70.0,
+                decoration: const BoxDecoration(
+                  color: Color(0xFFFAD02C),
+                ),
+                child: Card(
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  elevation: 10.0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24.0),
+                  ),
+                  child: wrapWithModel(
+                    model: _model.menuModel,
+                    updateCallback: () => setState(() {}),
+                    child: const MenuWidget(),
+                  ),
+                ),
+              ),
             ),
           ],
         ),

@@ -62,7 +62,7 @@ class _HorarioWidgetState extends State<HorarioWidget> {
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 0.0),
                         child: FlutterFlowCalendar(
                           color: FlutterFlowTheme.of(context).primary,
                           iconColor: FlutterFlowTheme.of(context).secondaryText,
@@ -180,7 +180,7 @@ class _HorarioWidgetState extends State<HorarioWidget> {
                               Align(
                                 alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Text(
-                                  'Bloque A',
+                                  'Curso: Septimo A',
                                   style:
                                       FlutterFlowTheme.of(context).bodyMedium,
                                 ),
@@ -205,6 +205,7 @@ class _HorarioWidgetState extends State<HorarioWidget> {
                                 alignment: const AlignmentDirectional(-1.0, 0.0),
                                 child: Text(
                                   'Fisica',
+                                  textAlign: TextAlign.center,
                                   style:
                                       FlutterFlowTheme.of(context).bodyMedium,
                                 ),
@@ -372,8 +373,8 @@ class _HorarioWidgetState extends State<HorarioWidget> {
               child: Container(
                 width: double.infinity,
                 height: 70.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                decoration: const BoxDecoration(
+                  color: Color(0xFFFAD02C),
                 ),
                 child: Card(
                   clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -392,7 +393,7 @@ class _HorarioWidgetState extends State<HorarioWidget> {
             ),
             Container(
               width: double.infinity,
-              height: 70.0,
+              height: 90.0,
               decoration: const BoxDecoration(
                 color: Color(0xFFFAD02C),
               ),
@@ -403,14 +404,19 @@ class _HorarioWidgetState extends State<HorarioWidget> {
                   Flexible(
                     child: Align(
                       alignment: const AlignmentDirectional(0.0, 0.0),
-                      child: Text(
-                        '👩‍🏫Mi Horario👨‍🏫',
-                        textAlign: TextAlign.center,
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Roboto',
-                              fontSize: 25.0,
-                              fontWeight: FontWeight.bold,
-                            ),
+                      child: Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0.0, 33.0, 0.0, 0.0),
+                        child: Text(
+                          '👩‍🏫Mi Horario👨‍🏫',
+                          textAlign: TextAlign.center,
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Roboto',
+                                    fontSize: 25.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                        ),
                       ),
                     ),
                   ),

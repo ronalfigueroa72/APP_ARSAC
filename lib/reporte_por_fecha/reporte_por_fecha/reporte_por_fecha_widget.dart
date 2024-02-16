@@ -589,8 +589,8 @@ class _ReportePorFechaWidgetState extends State<ReportePorFechaWidget> {
                 child: Container(
                   width: double.infinity,
                   height: 70.0,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                  decoration: const BoxDecoration(
+                    color: Color(0xFFFAD02C),
                   ),
                   child: Card(
                     clipBehavior: Clip.antiAliasWithSaveLayer,

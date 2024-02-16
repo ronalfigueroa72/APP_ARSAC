@@ -11,15 +11,17 @@ export '/reporte_por_fecha/reporte_por_fecha/reporte_por_fecha_widget.dart'
     show ReportePorFechaWidget;
 export '/reporte_por_estudiante/reporte_por_estudiante/reporte_por_estudiante_widget.dart'
     show ReportePorEstudianteWidget;
-export '/observaciones/observaciones/observaciones_widget.dart'
-    show ObservacionesWidget;
-export '/autenticacion/edita_informacion/edita_informacion_widget.dart'
-    show EditaInformacionWidget;
+export '/autenticacion/editar_informacion/editar_informacion_widget.dart'
+    show EditarInformacionWidget;
 export '/autenticacion/cambiar_contrasena/cambiar_contrasena_widget.dart'
     show CambiarContrasenaWidget;
 export '/autenticacion/ayuda_soporte/ayuda_soporte_widget.dart'
     show AyudaSoporteWidget;
-export '/asistencia/asistencia_en_listas/asistencia_en_listas_widget.dart'
-    show AsistenciaEnListasWidget;
+export '/asistencia/crear_asistencia/crear_asistencia_widget.dart'
+    show CrearAsistenciaWidget;
 export '/cargar_permisos/cargar_permisos/cargar_permisos_widget.dart'
     show CargarPermisosWidget;
+export '/observacion/observacion/observacion_widget.dart'
+    show ObservacionWidget;
+export '/crear_observaciones/crear_observaciones/crear_observaciones_widget.dart'
+    show CrearObservacionesWidget;

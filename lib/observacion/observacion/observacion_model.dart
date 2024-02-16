@@ -1,10 +1,10 @@
+import '/componenetes/menu/menu_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'asistencia_en_listas_widget.dart' show AsistenciaEnListasWidget;
+import 'observacion_widget.dart' show ObservacionWidget;
 import 'package:flutter/material.dart';
 
-class AsistenciaEnListasModel
-    extends FlutterFlowModel<AsistenciaEnListasWidget> {
+class ObservacionModel extends FlutterFlowModel<ObservacionWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for DropDown widget.
@@ -16,14 +16,20 @@ class AsistenciaEnListasModel
   // State field(s) for DropDown widget.
   String? dropDownValue3;
   FormFieldController<String>? dropDownValueController3;
+  // Model for Menu component.
+  late MenuModel menuModel;
 
   /// Initialization and disposal methods.
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    menuModel = createModel(context, () => MenuModel());
+  }
 
   @override
-  void dispose() {}
+  void dispose() {
+    menuModel.dispose();
+  }
 
   /// Action blocks are added here.
 

@@ -1,34 +1,31 @@
 import '/componenetes/menu/menu_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'reporte_por_estudiante_widget.dart' show ReportePorEstudianteWidget;
+import 'crear_observaciones_widget.dart' show CrearObservacionesWidget;
 import 'package:flutter/material.dart';
 
-class ReportePorEstudianteModel
-    extends FlutterFlowModel<ReportePorEstudianteWidget> {
+class CrearObservacionesModel
+    extends FlutterFlowModel<CrearObservacionesWidget> {
   ///  State fields for stateful widgets in this page.
 
+  // State field(s) for DropDown widget.
+  String? dropDownValue;
+  FormFieldController<String>? dropDownValueController;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
-  // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
-  // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownValueController2;
-  // State field(s) for DropDown widget.
-  String? dropDownValue3;
-  FormFieldController<String>? dropDownValueController3;
   // Model for Menu component.
-  late MenuModel menuModel;
+  late MenuModel menuModel1;
+  // Model for Menu component.
+  late MenuModel menuModel2;
 
   /// Initialization and disposal methods.
 
   @override
   void initState(BuildContext context) {
-    menuModel = createModel(context, () => MenuModel());
+    menuModel1 = createModel(context, () => MenuModel());
+    menuModel2 = createModel(context, () => MenuModel());
   }
 
   @override
@@ -36,7 +33,8 @@ class ReportePorEstudianteModel
     textFieldFocusNode?.dispose();
     textController?.dispose();
 
-    menuModel.dispose();
+    menuModel1.dispose();
+    menuModel2.dispose();
   }
 
   /// Action blocks are added here.

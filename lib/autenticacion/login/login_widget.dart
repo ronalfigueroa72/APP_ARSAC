@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -292,17 +293,46 @@ class _LoginWidgetState extends State<LoginWidget> {
                                     0.0, 20.0, 0.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
-                                    context.pushNamed(
-                                      'Inicio',
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.leftToRight,
-                                          duration: Duration(milliseconds: 300),
-                                        ),
-                                      },
+                                    _model.apiResultlgv = await LoginCall.call(
+                                      usename: _model.txtUsuarioController.text,
+                                      password:
+                                          _model.txtContrasenaController.text,
                                     );
+                                    if ((_model.apiResultlgv?.succeeded ??
+                                        true)) {
+                                      context.pushNamed(
+                                        'Inicio',
+                                        extra: <String, dynamic>{
+                                          kTransitionInfoKey: const TransitionInfo(
+                                            hasTransition: true,
+                                            transitionType:
+                                                PageTransitionType.bottomToTop,
+                                            duration:
+                                                Duration(milliseconds: 300),
+                                          ),
+                                        },
+                                      );
+                                    } else {
+                                      await showDialog(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            title: const Text('Error'),
+                                            content: const Text(
+                                                'Usuario o Contraseña incorrecto verifique y vuelva a intentarlo'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext),
+                                                child: const Text('Ok'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      );
+                                    }
+
+                                    setState(() {});
                                   },
                                   text: 'Iniciar sesión',
                                   icon: const Icon(

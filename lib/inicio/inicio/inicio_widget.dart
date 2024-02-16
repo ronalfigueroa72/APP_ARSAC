@@ -346,7 +346,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                   ),
                                   onPressed: () async {
                                     context.pushNamed(
-                                      'AsistenciaEnListas',
+                                      'Crear_Asistencia',
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: const TransitionInfo(
                                           hasTransition: true,
@@ -452,12 +452,12 @@ class _InicioWidgetState extends State<InicioWidget> {
                                     ),
                                     onPressed: () async {
                                       context.pushNamed(
-                                        'Observaciones',
+                                        'Observacion',
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: const TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
-                                                PageTransitionType.fade,
+                                                PageTransitionType.bottomToTop,
                                             duration:
                                                 Duration(milliseconds: 300),
                                           ),
@@ -489,8 +489,8 @@ class _InicioWidgetState extends State<InicioWidget> {
             Container(
               width: double.infinity,
               height: 70.0,
-              decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).secondaryBackground,
+              decoration: const BoxDecoration(
+                color: Colors.transparent,
               ),
               child: Card(
                 clipBehavior: Clip.antiAliasWithSaveLayer,

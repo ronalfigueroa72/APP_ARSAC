@@ -104,14 +104,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ReportePorEstudianteWidget(),
         ),
         FFRoute(
-          name: 'Observaciones',
-          path: '/observaciones',
-          builder: (context, params) => const ObservacionesWidget(),
-        ),
-        FFRoute(
-          name: 'EditaInformacion',
-          path: '/editaInformacion',
-          builder: (context, params) => const EditaInformacionWidget(),
+          name: 'Editar_Informacion',
+          path: '/editarInformacion',
+          builder: (context, params) => const EditarInformacionWidget(),
         ),
         FFRoute(
           name: 'CambiarContrasena',
@@ -124,14 +119,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const AyudaSoporteWidget(),
         ),
         FFRoute(
-          name: 'AsistenciaEnListas',
-          path: '/asistenciaEnListas',
-          builder: (context, params) => const AsistenciaEnListasWidget(),
+          name: 'Crear_Asistencia',
+          path: '/crearAsistencia',
+          builder: (context, params) => const CrearAsistenciaWidget(),
         ),
         FFRoute(
           name: 'CargarPermisos',
           path: '/cargarPermisos',
           builder: (context, params) => const CargarPermisosWidget(),
+        ),
+        FFRoute(
+          name: 'Observacion',
+          path: '/observacion',
+          builder: (context, params) => const ObservacionWidget(),
+        ),
+        FFRoute(
+          name: 'Crear_Observaciones',
+          path: '/crearObservaciones',
+          builder: (context, params) => const CrearObservacionesWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

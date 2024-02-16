@@ -1,3 +1,4 @@
+import '/componenetes/menu/menu_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -399,6 +400,29 @@ class _CargarPermisosWidgetState extends State<CargarPermisosWidget>
                 ),
               ).animateOnPageLoad(
                   animationsMap['containerOnPageLoadAnimation']!),
+            ),
+            Align(
+              alignment: const AlignmentDirectional(0.0, 1.0),
+              child: Container(
+                width: double.infinity,
+                height: 70.0,
+                decoration: const BoxDecoration(
+                  color: Color(0xFFFAD02C),
+                ),
+                child: Card(
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  elevation: 10.0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24.0),
+                  ),
+                  child: wrapWithModel(
+                    model: _model.menuModel,
+                    updateCallback: () => setState(() {}),
+                    child: const MenuWidget(),
+                  ),
+                ),
+              ),
             ),
           ],
         ),
