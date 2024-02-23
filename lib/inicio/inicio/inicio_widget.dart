@@ -272,7 +272,7 @@ class _InicioWidgetState extends State<InicioWidget> {
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 child: Opacity(
-                                  opacity: 1,
+                                  opacity: 2.0,
                                   child: FlutterFlowIconButton(
                                     borderColor: Colors.white,
                                     borderRadius: 10.0,

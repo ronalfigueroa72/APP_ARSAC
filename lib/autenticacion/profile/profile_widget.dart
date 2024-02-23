@@ -79,51 +79,50 @@ class _ProfileWidgetState extends State<ProfileWidget>
         ),
         child: Stack(
           children: [
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 2.0, 16.0, 16.0),
-              child: Container(
-                width: double.infinity,
-                constraints: const BoxConstraints(
-                  maxWidth: 670.0,
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  boxShadow: const [
-                    BoxShadow(
-                      blurRadius: 12.0,
-                      color: Color(0x1E000000),
-                      offset: Offset(0.0, 5.0),
-                    )
-                  ],
-                  borderRadius: BorderRadius.circular(16.0),
-                ),
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
-                  child: SingleChildScrollView(
-                    primary: false,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
-                          child: GradientText(
-                            'Profile',
-                            style: FlutterFlowTheme.of(context)
-                                .headlineMedium
-                                .override(
-                                  fontFamily: 'Outfit',
-                                  color: const Color(0xFF15161E),
-                                  fontSize: 24.0,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                            colors: const [Color(0xFFF0B832), Color(0xFFF44929)],
-                            gradientDirection: GradientDirection.ltr,
-                            gradientType: GradientType.linear,
-                          ),
+            Container(
+              width: double.infinity,
+              constraints: const BoxConstraints(
+                maxWidth: 670.0,
+              ),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                boxShadow: const [
+                  BoxShadow(
+                    blurRadius: 12.0,
+                    color: Color(0x1E000000),
+                    offset: Offset(0.0, 5.0),
+                  )
+                ],
+                borderRadius: BorderRadius.circular(16.0),
+              ),
+              child: Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
+                child: SingleChildScrollView(
+                  primary: false,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Align(
+                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        child: GradientText(
+                          'Profile',
+                          style: FlutterFlowTheme.of(context)
+                              .headlineMedium
+                              .override(
+                                fontFamily: 'Outfit',
+                                color: const Color(0xFF15161E),
+                                fontSize: 24.0,
+                                fontWeight: FontWeight.w500,
+                              ),
+                          colors: const [Color(0xFFF0B832), Color(0xFFF44929)],
+                          gradientDirection: GradientDirection.ltr,
+                          gradientType: GradientType.linear,
                         ),
-                        Column(
+                      ),
+                      Flexible(
+                        child: Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -405,86 +404,83 @@ class _ProfileWidgetState extends State<ProfileWidget>
                               .divide(const SizedBox(height: 45.0))
                               .addToEnd(const SizedBox(height: 16.0)),
                         ),
-                        Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                24.0, 12.0, 24.0, 24.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      context.pushNamed(
-                                        'login',
-                                        extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
-                                            hasTransition: true,
-                                            transitionType:
-                                                PageTransitionType.fade,
-                                            duration:
-                                                Duration(milliseconds: 300),
-                                          ),
-                                        },
-                                      );
-                                    },
-                                    text: 'Cerrar Sesión',
-                                    icon: const Icon(
-                                      Icons.chevron_left,
-                                      size: 15.0,
+                      ),
+                      Align(
+                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              24.0, 12.0, 24.0, 24.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Align(
+                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    context.pushNamed(
+                                      'login',
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: const TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.fade,
+                                          duration: Duration(milliseconds: 300),
+                                        ),
+                                      },
+                                    );
+                                  },
+                                  text: 'Cerrar Sesión',
+                                  icon: const Icon(
+                                    Icons.chevron_left,
+                                    size: 15.0,
+                                  ),
+                                  options: FFButtonOptions(
+                                    height: 44.0,
+                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                        24.0, 0.0, 24.0, 0.0),
+                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: const Color(0xFFFAD02C),
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Plus Jakarta Sans',
+                                          color: Colors.white,
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                    elevation: 3.0,
+                                    borderSide: const BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1.0,
                                     ),
-                                    options: FFButtonOptions(
-                                      height: 44.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          24.0, 0.0, 24.0, 0.0),
-                                      iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color: const Color(0xFFFAD02C),
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Plus Jakarta Sans',
-                                            color: Colors.white,
-                                            fontSize: 20.0,
-                                            fontWeight: FontWeight.w500,
-                                          ),
-                                      elevation: 3.0,
-                                      borderSide: const BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: const BorderRadius.only(
-                                        bottomLeft: Radius.circular(12.0),
-                                        bottomRight: Radius.circular(12.0),
-                                        topLeft: Radius.circular(12.0),
-                                        topRight: Radius.circular(12.0),
-                                      ),
-                                      hoverColor: const Color(0xFFC80E0D),
-                                      hoverBorderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
-                                        width: 1.0,
-                                      ),
-                                      hoverTextColor: const Color(0xFF15161E),
-                                      hoverElevation: 0.0,
+                                    borderRadius: const BorderRadius.only(
+                                      bottomLeft: Radius.circular(12.0),
+                                      bottomRight: Radius.circular(12.0),
+                                      topLeft: Radius.circular(12.0),
+                                      topRight: Radius.circular(12.0),
                                     ),
+                                    hoverColor: const Color(0xFFC80E0D),
+                                    hoverBorderSide: BorderSide(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      width: 1.0,
+                                    ),
+                                    hoverTextColor: const Color(0xFF15161E),
+                                    hoverElevation: 0.0,
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
-                      ].addToEnd(const SizedBox(height: 30.0)),
-                    ),
+                      ),
+                    ].addToEnd(const SizedBox(height: 30.0)),
                   ),
                 ),
-              ).animateOnPageLoad(
-                  animationsMap['containerOnPageLoadAnimation']!),
-            ),
+              ),
+            ).animateOnPageLoad(animationsMap['containerOnPageLoadAnimation']!),
             Align(
               alignment: const AlignmentDirectional(0.0, 1.0),
               child: Container(
