@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'profile_model.dart';
@@ -68,15 +67,6 @@ class _ProfileWidgetState extends State<ProfileWidget>
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -85,7 +75,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
         height: double.infinity,
         decoration: const BoxDecoration(
           color: Color(0x9AFFFFFF),
-          shape: BoxShape.circle,
+          shape: BoxShape.rectangle,
         ),
         child: Stack(
           children: [
@@ -301,7 +291,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   context.pushNamed(
-                                    'CambiarContrasena',
+                                    'Cambiar_Contrasena',
                                     extra: <String, dynamic>{
                                       kTransitionInfoKey: const TransitionInfo(
                                         hasTransition: true,

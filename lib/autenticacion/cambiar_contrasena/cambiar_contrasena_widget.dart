@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'cambiar_contrasena_model.dart';
@@ -78,15 +77,6 @@ class _CambiarContrasenaWidgetState extends State<CambiarContrasenaWidget>
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -538,26 +528,6 @@ class _CambiarContrasenaWidgetState extends State<CambiarContrasenaWidget>
                   ),
                 ).animateOnPageLoad(
                     animationsMap['containerOnPageLoadAnimation']!),
-                Container(
-                  width: double.infinity,
-                  height: 70.0,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                  ),
-                  child: Card(
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                    elevation: 10.0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(24.0),
-                    ),
-                    child: wrapWithModel(
-                      model: _model.menuModel1,
-                      updateCallback: () => setState(() {}),
-                      child: const MenuWidget(),
-                    ),
-                  ),
-                ),
               ],
             ),
           ),
@@ -577,7 +547,7 @@ class _CambiarContrasenaWidgetState extends State<CambiarContrasenaWidget>
                   borderRadius: BorderRadius.circular(24.0),
                 ),
                 child: wrapWithModel(
-                  model: _model.menuModel2,
+                  model: _model.menuModel,
                   updateCallback: () => setState(() {}),
                   child: const MenuWidget(),
                 ),

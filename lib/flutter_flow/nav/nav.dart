@@ -109,7 +109,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const EditarInformacionWidget(),
         ),
         FFRoute(
-          name: 'CambiarContrasena',
+          name: 'Cambiar_Contrasena',
           path: '/cambiarContrasena',
           builder: (context, params) => const CambiarContrasenaWidget(),
         ),
@@ -137,6 +137,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Crear_Observaciones',
           path: '/crearObservaciones',
           builder: (context, params) => const CrearObservacionesWidget(),
+        ),
+        FFRoute(
+          name: 'Notificaciones',
+          path: '/notificaciones',
+          builder: (context, params) => const NotificacionesWidget(),
+        ),
+        FFRoute(
+          name: 'Barra_Busqueda',
+          path: '/barraBusqueda',
+          builder: (context, params) => const BarraBusquedaWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -250,6 +260,7 @@ class FFRoute {
         name: name,
         path: path,
         pageBuilder: (context, state) {
+          fixStatusBarOniOS16AndBelow(context);
           final ffParams = FFParameters(state, asyncParams);
           final page = ffParams.hasFutures
               ? FutureBuilder(

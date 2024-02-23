@@ -25,3 +25,7 @@ export '/observacion/observacion/observacion_widget.dart'
     show ObservacionWidget;
 export '/crear_observaciones/crear_observaciones/crear_observaciones_widget.dart'
     show CrearObservacionesWidget;
+export '/notificaciones/notificaciones/notificaciones_widget.dart'
+    show NotificacionesWidget;
+export '/barra_busqueda/barra_busqueda/barra_busqueda_widget.dart'
+    show BarraBusquedaWidget;

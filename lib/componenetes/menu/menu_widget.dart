@@ -61,15 +61,51 @@ class _MenuWidgetState extends State<MenuWidget> {
               ),
             ),
           ),
-          const Icon(
-            Icons.manage_search_outlined,
-            color: Color(0xFF293035),
-            size: 50.0,
+          InkWell(
+            splashColor: Colors.transparent,
+            focusColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            onTap: () async {
+              context.pushNamed(
+                'Barra_Busqueda',
+                extra: <String, dynamic>{
+                  kTransitionInfoKey: const TransitionInfo(
+                    hasTransition: true,
+                    transitionType: PageTransitionType.bottomToTop,
+                    duration: Duration(milliseconds: 300),
+                  ),
+                },
+              );
+            },
+            child: const Icon(
+              Icons.manage_search_outlined,
+              color: Color(0xFF293035),
+              size: 50.0,
+            ),
           ),
-          const Icon(
-            Icons.notifications,
-            color: Color(0xFF293035),
-            size: 43.0,
+          InkWell(
+            splashColor: Colors.transparent,
+            focusColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            onTap: () async {
+              context.pushNamed(
+                'Notificaciones',
+                extra: <String, dynamic>{
+                  kTransitionInfoKey: const TransitionInfo(
+                    hasTransition: true,
+                    transitionType: PageTransitionType.topToBottom,
+                    duration: Duration(milliseconds: 400),
+                  ),
+                },
+              );
+            },
+            child: const Icon(
+              Icons.notifications,
+              color: Color(0xFF293035),
+              size: 43.0,
+            ),
           ),
           Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),

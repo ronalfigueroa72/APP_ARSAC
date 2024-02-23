@@ -19,16 +19,13 @@ class CambiarContrasenaModel extends FlutterFlowModel<CambiarContrasenaWidget> {
   TextEditingController? yourNameController3;
   String? Function(BuildContext, String?)? yourNameController3Validator;
   // Model for Menu component.
-  late MenuModel menuModel1;
-  // Model for Menu component.
-  late MenuModel menuModel2;
+  late MenuModel menuModel;
 
   /// Initialization and disposal methods.
 
   @override
   void initState(BuildContext context) {
-    menuModel1 = createModel(context, () => MenuModel());
-    menuModel2 = createModel(context, () => MenuModel());
+    menuModel = createModel(context, () => MenuModel());
   }
 
   @override
@@ -42,8 +39,7 @@ class CambiarContrasenaModel extends FlutterFlowModel<CambiarContrasenaWidget> {
     yourNameFocusNode3?.dispose();
     yourNameController3?.dispose();
 
-    menuModel1.dispose();
-    menuModel2.dispose();
+    menuModel.dispose();
   }
 
   /// Action blocks are added here.
