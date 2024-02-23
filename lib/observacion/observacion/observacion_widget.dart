@@ -511,27 +511,8 @@ class _ObservacionWidgetState extends State<ObservacionWidget>
                                                                         child:
                                                                             FFButtonWidget(
                                                                           onPressed:
-                                                                              () async {
-                                                                            var confirmDialogResponse = await showDialog<bool>(
-                                                                                  context: context,
-                                                                                  builder: (alertDialogContext) {
-                                                                                    return AlertDialog(
-                                                                                      title: const Text('Eliminar'),
-                                                                                      content: const Text('¿Desea eliminar esta observación?'),
-                                                                                      actions: [
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, false),
-                                                                                          child: const Text('Cancel'),
-                                                                                        ),
-                                                                                        TextButton(
-                                                                                          onPressed: () => Navigator.pop(alertDialogContext, true),
-                                                                                          child: const Text('Confirmar'),
-                                                                                        ),
-                                                                                      ],
-                                                                                    );
-                                                                                  },
-                                                                                ) ??
-                                                                                false;
+                                                                              () {
+                                                                            print('Button pressed ...');
                                                                           },
                                                                           text:
                                                                               'Button',
