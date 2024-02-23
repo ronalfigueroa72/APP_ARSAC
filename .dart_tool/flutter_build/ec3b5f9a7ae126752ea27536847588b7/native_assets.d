@@ -1,0 +1,1 @@
+ C:\\Users\\DESARROLLO-SOFTWARE\\Pictures\\Saved\ Pictures\\APP_ARSAC\\.dart_tool\\flutter_build\\ec3b5f9a7ae126752ea27536847588b7\\native_assets.yaml: 
