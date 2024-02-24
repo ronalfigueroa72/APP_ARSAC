@@ -120,7 +120,7 @@ class _MenuWidgetState extends State<MenuWidget> {
                   extra: <String, dynamic>{
                     kTransitionInfoKey: const TransitionInfo(
                       hasTransition: true,
-                      transitionType: PageTransitionType.fade,
+                      transitionType: PageTransitionType.topToBottom,
                       duration: Duration(milliseconds: 300),
                     ),
                   },
